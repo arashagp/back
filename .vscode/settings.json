@@ -1,0 +1,72 @@
+{
+  "cSpell.language": "en,fa,fa-IR",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "js/ts.implicitProjectConfig.checkJs": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[nunjucks]": {
+    "editor.defaultFormatter": "guapibai.nunjucks-prettier"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.wordWrapColumn": 120,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts, ${capture}.d.ts.map",
+    "*.ts": "${capture}.js, ${capture}.js.map, ${capture}.d.ts, ${capture}.d.ts.map",
+    "tsconfig.json": "tsconfig.*.json, *.tsbuildinfo"
+  },
+  "files.associations": {
+    "*.ajs": "json",
+    "*.ajs.bk": "json",
+    "*.conf.template": "nginx",
+    "*.njk": "html"
+  },
+  "files.exclude": {
+    "**/.wireit": true,
+    "**/CHANGELOG.md": true,
+    "**/*.tsbuildinfo": true,
+    "**/.pnp*": true
+  },
+  "git.autoStash": true,
+  "git.branchProtection": ["main", "next"],
+  "githubPullRequests.ignoredPullRequestBranches": ["main", "next"],
+  "npm.packageManager": "yarn",
+  // "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs",
+  "prettier.prettierPath": "node_modules/prettier/index.cjs",
+  "prettier.useEditorConfig": true,
+  "search.exclude": {
+    "**/.pnp.*": true,
+    "**/.yarn": true,
+    "**/*.lock": true
+  },
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  // "typescript.tsdk": ".yarn/sdks/typescript/lib",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "css.customData": [".vscode/tailwind.json"],
+  "lit-plugin.strict": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "lit-plugin.rules.no-missing-import": "off",
+  "typescript.preferences.importModuleSpecifierEnding": "js",
+  "typescript.preferences.importModuleSpecifier": "project-relative",
+  "javascript.preferences.importModuleSpecifier": "project-relative",
+  "javascript.preferences.importModuleSpecifierEnding": "js",
+  "todo-tree.tree.scanMode": "workspace only",
+  "github.copilot.chat.codeGeneration.instructions": [
+    {
+      "file": ".github/copilot-instruction.md"
+    }
+  ]
+}

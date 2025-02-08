@@ -1,0 +1,48 @@
+{
+  "name": "back",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "pnpm build:ts && pnpm build:es",
+    "build:es": "nano-build --preset=module",
+    "build:ts": "tsc --build",
+    "format": "pnpm format:prettier && pnpm format:es",
+    "format:es": "pnpm lint --fix",
+    "format:prettier": "prettier . --ignore-path .prettierignore --write",
+    "lint": "eslint . --config eslint.config.mjs",
+    "watch": "concurrently \"pnpm watch:es && pnpm watch:ts\" \"pnpm nodemon dist/main.mjs\"",
+    "watch:es": "nano-build --preset=module --watch",
+    "watch:ts": "tsc --build --watch --preserveWatchOutput"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongoose": "^8.10.0",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@alwatr/nano-build": "^5.0.0",
+    "@eslint/compat": "^1.2.6",
+    "@eslint/js": "^9.20.0",
+    "@stylistic/eslint-plugin": "^3.1.0",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.1",
+    "concurrently": "^9.1.2",
+    "eslint": "^9.20.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0",
+    "globals": "^15.14.0",
+    "nodemon": "^3.1.9",
+    "prettier": "^3.4.2",
+    "prettier-plugin-packagejson": "^2.5.8",
+    "prettier-plugin-tailwindcss": "^0.6.10",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.23.0"
+  },
+  "packageManager": "pnpm@9.14.4+sha512.c8180b3fbe4e4bca02c94234717896b5529740a6cbadf19fa78254270403ea2f27d4e1d46a08a0f56c89b63dc8ebfd3ee53326da720273794e6200fcf0d184ab"
+}
