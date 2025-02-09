@@ -12,5 +12,6 @@ module.exports = {
   endOfLine: 'lf',
   quoteProps: 'as-needed',
   tabWidth: 2,
-  plugins: [require.resolve('prettier-plugin-tailwindcss'), require.resolve('prettier-plugin-packagejson')],
+  bracketSameLine: true,
+  plugins: [ require.resolve('prettier-plugin-tailwindcss'), require.resolve('prettier-plugin-packagejson') ],
 };

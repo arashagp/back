@@ -14,10 +14,11 @@ const baseExtends = tseslint.config(
 );
 
 const jsConfigs = tseslint.config({
-  extends: [tseslint.configs.disableTypeChecked],
-  files: ['*.{mjs,js,cjs}', '**/*.{mjs,js,cjs}'],
+  extends: [ tseslint.configs.disableTypeChecked ],
+  files: [ '*.{mjs,js,cjs}', '**/*.{mjs,js,cjs}' ],
   plugins: {
     '@typescript-eslint': tseslint.plugin,
+    '@stylistic': stylistic,
   },
   languageOptions: {
     globals: {
@@ -30,13 +31,14 @@ const jsConfigs = tseslint.config({
   rules: {
     '@typescript-eslint/no-require-imports': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@stylistic/array-bracket-spacing': [ 'error', 'always' ],
   },
 });
 
 const tsconfigRootDir = import.meta.dirname;
 
 const tsConfig = tseslint.config({
-  files: ['**/*.ts', '**/*.mjs', '**/*.cjs', '**/*.js'],
+  files: [ '**/*.ts', '**/*.mjs', '**/*.cjs', '**/*.js' ],
   languageOptions: {
     globals: {
       ...globals['shared-node-browser'],
@@ -54,13 +56,13 @@ const tsConfig = tseslint.config({
     '@stylistic': stylistic,
   },
   rules: {
-    '@stylistic/max-len': ['error', { code: 140 }],
-    'no-eval': ['error', { allowIndirect: true }],
+    '@stylistic/max-len': [ 'error', { code: 140 } ],
+    'no-eval': [ 'error', { allowIndirect: true } ],
     '@stylistic/no-floating-decimal': 'error',
     '@stylistic/space-infix-ops': 'error',
-    'new-cap': ['error', { capIsNewExceptionPattern: 'Mini$' }],
-    '@stylistic/brace-style': ['error', 'stroustrup', { allowSingleLine: true }],
-    '@stylistic/array-bracket-spacing': 'off',
+    'new-cap': [ 'error', { capIsNewExceptionPattern: 'Mini$' } ],
+    '@stylistic/brace-style': [ 'error', 'stroustrup', { allowSingleLine: true } ],
+    '@stylistic/array-bracket-spacing': [ 'error', 'always' ],
     '@stylistic/indent': [
       'error',
       2,
@@ -86,13 +88,13 @@ const tsConfig = tseslint.config({
         ],
       },
     ],
-    '@stylistic/operator-linebreak': ['error', 'after', { overrides: { '?': 'before', ':': 'before' } }],
+    '@stylistic/operator-linebreak': [ 'error', 'after', { overrides: { '?': 'before', ':': 'before' } } ],
 
     '@stylistic/semi': 'error',
 
     'no-unused-vars': 'off',
     'prefer-const': 'error',
-    'sort-imports': ['error'],
+    'sort-imports': [ 'error' ],
 
     '@typescript-eslint/prefer-string-starts-ends-with': 'off',
     '@typescript-eslint/no-dynamic-delete': 'off',
@@ -114,6 +116,6 @@ export default [
   ...tsConfig,
   ...jsConfigs,
   {
-    ignores: ['node_modules', 'dist'],
+    ignores: [ 'node_modules', 'dist' ],
   },
 ];

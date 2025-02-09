@@ -17,8 +17,8 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": false,
   "editor.wordWrapColumn": 120,
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
