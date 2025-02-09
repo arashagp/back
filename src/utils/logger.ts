@@ -3,6 +3,7 @@ import { env } from 'node:process';
 import packageInfo from '../../package.json';
 
 export const logger = createLogger({
+  level: 'info',
   format: format.combine(
     format.errors({ stack: true }),
     format.splat(),
@@ -32,7 +33,13 @@ export const logger = createLogger({
 if (env.NODE_ENV !== 'production') {
   logger.add(
     new transports.Console({
-      format: format.combine(logger.format),
+      format: format.combine(
+        format.prettyPrint({
+          colorize: true,
+          depth: 1
+        }),
+        format.errors({ stack: true }),
+      ),
     }),
   );
 }
