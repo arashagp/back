@@ -183,10 +183,27 @@ export async function forgetPasswordRequest (req: Request, res: Response): Promi
       `
     };
 
+    transporter.verify(function(error, success) {
+      if (error != null) {
+        logger.error(error.message);
+
+        return res.status(500).json({
+          success: false,
+          message: "Internal Error."
+        });
+      }
+      else {
+        logger.info(success);
+
+        return;
+      }
+    });
+
     // Send the email
     transporter.sendMail(mailOptions, function(error, info){
       if (error) {
         logger.error(error.message);
+
         return res.status(500).json({
           success: false,
           message: "Internal Error."
@@ -194,6 +211,7 @@ export async function forgetPasswordRequest (req: Request, res: Response): Promi
       }
       else {
         logger.info(info);
+
         return;
       }
     });
