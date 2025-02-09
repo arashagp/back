@@ -95,7 +95,7 @@ const tsConfig = tseslint.config({
     'no-unused-vars': 'off',
     'prefer-const': 'error',
     'sort-imports': [ 'error' ],
-
+    '@typescript-eslint/no-extraneous-class': 'warn',
     '@typescript-eslint/prefer-string-starts-ends-with': 'off',
     '@typescript-eslint/no-dynamic-delete': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
